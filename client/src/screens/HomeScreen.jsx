@@ -10,8 +10,21 @@ const HomeScreen = () => {
   const dispatch = useDispatch();
 
   const jobs = [1, 2, 3];
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+        "https://us.jooble.org/api/bbcac3f3-4414-47f2-b029-1455774a4321"
+      );
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-  useEffect(() => {}, [dispatch]);
+  useEffect(() => {
+    fetchData();
+  }, [dispatch]);
 
   const formHandler = (e) => {
     e.preventDefault();

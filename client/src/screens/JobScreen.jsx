@@ -3,20 +3,17 @@ import { Card } from "react-bootstrap";
 import Rating from "../components/Rating";
 import { Link } from "react-router-dom";
 
-const JobScreen = ({ car }) => {
+const JobScreen = ({ job }) => {
   return (
     <>
       <Card className="my-3 p-3 rounded">
-        <Link to={`/car/${car._id}`}>
-          {car.images.map((image,index)=>{
-            return <Card.Img key={index} src={image.url} variant="top" />
-          })}
-          
+        <Link to={`/job/${job._id}`}>
+           <Card.Img src={"hkj"} variant="top" />
         </Link>
-        <Card.Body>
-          <Link to={`/car/${car._id}`}>
+        {/* <Card.Body>
+          <Link to={`/job/${job._id}`}>
             <Card.Title as="div">
-              <strong>{car.name}</strong>
+              <strong>{job.title}</strong>
             </Card.Title>
           </Link>
           <Card.Text as="div">
@@ -35,7 +32,7 @@ const JobScreen = ({ car }) => {
             />
           </Card.Text>
           <Card.Text as="div">Rent / Day $ {car.rentPerDay}</Card.Text>
-        </Card.Body>
+        </Card.Body> */}
       </Card>
     </>
   );
